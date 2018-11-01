@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# script to copy names/paths for the N most-recent files, 
+# given a directory and an value of N
+
+# output: on stdout and in system clipboard
+
+if [ $# != 2 ]
+then
+  echo "Usage: $0 directory number-of-files "
+  exit 1
+fi 
+
+directory=$1
+num_files=$2
+
+ls -tr "$directory" | tail -"$num_files"
+
+# copy output to clipboard
+# future: suppressing errors if this system doesn't have a pbcopy
+ls -tr "$directory"  | tail -"$num_files" | pbcopy -
+
