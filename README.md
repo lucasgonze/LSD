@@ -3,7 +3,7 @@
 
 Given a directory, show the most recent N files.
 
-Usage: $0 directory number-of-files
+Usage: `lsd directory number-of-files`
 
 <hr>
 
